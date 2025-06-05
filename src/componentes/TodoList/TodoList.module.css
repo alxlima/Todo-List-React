@@ -1,0 +1,56 @@
+.container {
+    max-width: var(--maxWidthApp);
+    margin: 76px auto 0 auto;
+}
+
+.infoTasksContainer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+}
+
+.infoDoneTasks {
+    font-size: 15px;
+    font-weight: 800;
+    color: var(--purple);
+} 
+
+.infoCountDoneTasks {
+    background: var(--gray400);
+    color: var(--gray200);
+    padding: 2px 10px;
+    font-size: 12.5px;
+    font-weight: 800;
+    border-radius: 20px;
+}
+
+.emptyContainer {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    border: 1px solid var(--gray400);
+    border-radius: 5px;
+}
+
+.emptyLabel {
+    text-align: center;
+    color: var(--gray300);
+}
+
+.tasksContainer {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+@media (max-width: 840px) {
+    .container {
+        margin-top: 50px;
+        padding: 20px;
+    }
+}

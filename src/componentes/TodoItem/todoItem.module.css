@@ -1,0 +1,78 @@
+.container {
+    display: flex;
+    gap: 16px;
+    background-color: var(--gray500);
+    border: 1px solid var(--gray400);
+    border-radius: 6px;
+    padding: 20px;
+}
+
+.isDoneInput {
+    appearance: none;
+    background-color: transparent;
+    margin: 0;
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--purpleDark);
+    border-radius: 50%;
+    transform: translateY(0px);
+    cursor: pointer;
+    transition: all .2s;
+}
+
+.isDoneInput:checked {
+    background-color: var(--purpleDark);
+}
+
+/*crio novo icone que apresenta dinamicamente no botão. */
+.isDoneInput::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all .2s;
+    background-color: var(--gray100);
+    clip-path: polygon(28% 38%, 41% 53%, 75% 24%, 86% 38%, 40% 78%, 15% 50%);  /*site W3  format icon checked.*/
+}
+
+/* ativo quando marcado e opacity 01 apresenta o elemento.. */
+.isDoneInput:checked::before {
+    opacity: 1;
+}
+
+.taskTitleContainer {
+    flex: 1;
+    color: var(--gray100);
+    word-break: break-all; /*quebra de linha de texto no layout*/
+    transition: all .4s;
+}
+
+.taskDoneTitleContainer {
+    text-decoration: line-through;  /*crio a linha de coment. texto marcado */
+    color: var(--gray300);
+}
+
+/* Customizo o botão */
+.deleteTaskBtn {
+    outline: none;
+    border: none;
+    padding: 0px 2px;
+    border-radius: 4px;
+    background: transparent;
+    cursor: pointer;  
+}
+
+/* customizo transição para o botão, acesso svg path do icone. */
+.deleteTaskBtn,
+.deleteTaskBtn svg path {
+  transition: all .3s;
+}
+/* customizo transição passo mouse mudo a cor do icone red.  */
+.deleteTaskBtn:hover {
+    background: var(--gray400);
+}
+
+.deleteTaskBtn:hover svg path {
+    fill: var(--red);
+}
